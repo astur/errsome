@@ -64,6 +64,14 @@ const errsome = require('errsome');
 const err = new Error('Bla-bla-bla');
 
 const awesomeError = errsome(err);
+
+const serializedError = errsome.stringify(err, 2);
+// It is just a short form for this:
+// require('json5').stringify(err, null, 2);
+
+errsome.log(err, 2);
+// It is just a short form for this:
+// console.log(errsome.stringify(err, 2));
 ```
 
 ## License

@@ -3,6 +3,8 @@ const m = require('.');
 
 test('errsome', t => {
     t.is(typeof m, 'function');
+    t.is(typeof m.stringify, 'function');
+    t.is(typeof m.log, 'function');
 });
 
 test('main', t => {

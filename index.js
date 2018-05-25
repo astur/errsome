@@ -5,3 +5,5 @@ const errsome = err => Object.assign({
 }, err);
 
 module.exports = errsome;
+module.exports.stringify = (err, sp = 2) => require('json5').stringify(errsome(err), null, sp);
+module.exports.log = (err, sp = 2) => console.log(module.exports.stringify(err, sp));
