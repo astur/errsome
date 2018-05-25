@@ -1,8 +1,7 @@
 {
-  "private": true,
   "name": "errsome",
   "version": "0.0.0",
-  "description": "",
+  "description": "Making errors more loggable, readable and serializable",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
   "scripts": {
@@ -24,7 +23,13 @@
     "eslint-config-astur": "0.0.2"
   },
   "keywords": [
-    "errsome"
+    "error",
+    "log",
+    "loggable",
+    "readable",
+    "serializable",
+    "awesome",
+    "prettify"
   ],
   "license": "MIT"
 }
