@@ -1,6 +1,6 @@
 {
   "name": "errsome",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Making errors more loggable, readable and serializable",
   "main": "index.js",
   "author": "astur <astur@yandex.ru> (http://kozlov.am/)",
