@@ -14,6 +14,7 @@ test('main', t => {
     t.is(Object.keys(mErr).length, 4);
     t.deepEqual(Object.keys(mErr), ['name', 'message', 'stack', 'field']);
     t.true(Array.isArray(mErr.stack));
+    t.false(/TEST/.test(mErr.stack[0]));
     t.is(mErr.field, 'bla');
     t.is(mErr.message, 'TEST');
     t.is(mErr.name, 'Error');

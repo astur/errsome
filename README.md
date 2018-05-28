@@ -35,8 +35,7 @@ undefined
 { name: 'TypeError',
   message: 'This is a message',
   stack:
-   [ 'TypeError: This is a message',
-     'at repl:1:13',
+   [ 'at repl:1:13',
      'at ContextifyScript.Script.runInThisContext (vm.js:50:33)',
      'at REPLServer.defaultEval (repl.js:239:29)',
      'at bound (domain.js:301:14)',
