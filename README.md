@@ -15,12 +15,13 @@ There is [some problems](https://gist.github.com/astur/d93bdcafce2342242841b7698
 ~/js/github/errsome $ node
 > const errsome = require('.')
 undefined
-> const err = new TypeError('This is a message')
+> const err = new TypeError('This is a message\nMulti line')
 undefined
 > err.field = 'bla'
 'bla'
 > err
 { TypeError: This is a message
+Multi line
     at repl:1:13
     at ContextifyScript.Script.runInThisContext (vm.js:50:33)
     at REPLServer.defaultEval (repl.js:239:29)
@@ -33,7 +34,7 @@ undefined
     at REPLServer.Interface._line (readline.js:631:8) field: 'bla' }
 > errsome(err)
 { name: 'TypeError',
-  message: 'This is a message',
+  message: ['This is a message', 'Multi line'],
   stack:
    [ 'at repl:1:13',
      'at ContextifyScript.Script.runInThisContext (vm.js:50:33)',
