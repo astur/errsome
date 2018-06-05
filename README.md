@@ -1,6 +1,6 @@
 # errsome
 
-Making errors more loggable, readable and serializable
+Making errors more loggable, readable and serializable, but still object.
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-image]][npm-url]
