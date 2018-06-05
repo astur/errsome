@@ -42,3 +42,10 @@ test('custom stack', t => {
     Reflect.deleteProperty(err, 'stack');
     t.is(m(err).stack, undefined);
 });
+
+test('stringify', t => {
+    const err = new Error('TEST');
+    Reflect.deleteProperty(err, 'stack');
+    t.is(m.stringify(err, 0), `{name:'Error',message:'TEST'}`);
+    t.is(m.stringify(err), `{\n  name: 'Error',\n  message: 'TEST',\n}`);
+});
