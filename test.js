@@ -32,3 +32,13 @@ test('multi line message', t => {
     t.deepEqual(mErr.message, ['TEST', 'TEST', 'TEST']);
     t.is(mErr.name, 'Error');
 });
+
+test('custom stack', t => {
+    const err = new Error('TEST');
+    err.stack = 42;
+    t.is(m(err).stack, 42);
+    err.stack = 'foo\nok';
+    t.is(m(err).stack[0], 'ok');
+    Reflect.deleteProperty(err, 'stack');
+    t.is(m(err).stack, undefined);
+});
