@@ -1,5 +1,6 @@
 const test = require('ava');
 const m = require('.');
+const stdout = require('test-console').stdout;
 
 test('errsome', t => {
     t.is(typeof m, 'function');
@@ -48,4 +49,13 @@ test('stringify', t => {
     Reflect.deleteProperty(err, 'stack');
     t.is(m.stringify(err, 0), `{name:'Error',message:'TEST'}`);
     t.is(m.stringify(err), `{\n  name: 'Error',\n  message: 'TEST',\n}`);
+});
+
+test('log', t => {
+    const err = new Error('TEST');
+    Reflect.deleteProperty(err, 'stack');
+    const inspect = stdout.inspect();
+    m.log(err);
+    inspect.restore();
+    t.is(inspect.output[0], `${m.stringify(err)}\n`);
 });
