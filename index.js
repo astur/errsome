@@ -1,3 +1,5 @@
+const json5 = require('json5');
+
 const errsome = err => {
     const message = err.message.split('\n');
     return Object.assign({
@@ -10,5 +12,5 @@ const errsome = err => {
 };
 
 module.exports = errsome;
-module.exports.stringify = (err, sp = 2) => require('json5').stringify(errsome(err), null, sp);
+module.exports.stringify = (err, sp = 2) => json5.stringify(errsome(err), null, sp);
 module.exports.log = (err, sp = 2) => console.log(module.exports.stringify(err, sp));
